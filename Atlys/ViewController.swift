@@ -12,11 +12,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    let imgArr = ["Malaysia", "Dubai", "Singapore"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let flowLayout = ZoomFlowLayout()
         collectionView.dataSource = self
         collectionView.delegate = self
-        let flowLayout = ZoomFlowLayout()
         collectionView.collectionViewLayout = flowLayout
         let nib = UINib(nibName: "CarouselCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
@@ -31,7 +33,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CarouselCollectionViewCell {
-            cell.setupCell(imageName: "Home")
+            cell.setupCell(imageName: self.imgArr[indexPath.row])
             return cell
         }
         return UICollectionViewCell()

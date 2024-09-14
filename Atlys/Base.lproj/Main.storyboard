@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E2o-zk-weh">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="300"/>
+                                        <rect key="frame" x="0.0" y="110" width="393" height="300"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="hKf-0X-Icd"/>
@@ -35,18 +35,31 @@
                                         <cells/>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="epH-S9-psu">
-                                        <rect key="frame" x="138.66666666666666" y="370" width="116" height="26"/>
+                                        <rect key="frame" x="138.66666666666666" y="430" width="116" height="26"/>
                                         <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
                                         <color key="currentPageIndicatorTintColor" systemColor="secondaryLabelColor"/>
                                     </pageControl>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AtlysLogo" translatesAutoresizingMaskIntoConstraints="NO" id="HWR-5e-sLC">
+                                        <rect key="frame" x="74.333333333333329" y="10" width="244.33333333333337" height="84"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Visas On Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-dX-Czu">
+                                        <rect key="frame" x="102.33333333333333" y="472" width="188.33333333333337" height="23"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="ABg-dX-Czu" firstAttribute="centerX" secondItem="B5w-b8-KaW" secondAttribute="centerX" id="AJ3-aG-dul"/>
                                     <constraint firstAttribute="trailing" secondItem="E2o-zk-weh" secondAttribute="trailing" id="HiM-O7-jze"/>
+                                    <constraint firstItem="E2o-zk-weh" firstAttribute="top" secondItem="HWR-5e-sLC" secondAttribute="bottom" constant="16" id="HyT-iK-Tvf"/>
                                     <constraint firstItem="E2o-zk-weh" firstAttribute="leading" secondItem="B5w-b8-KaW" secondAttribute="leading" id="IJI-Eg-6kQ"/>
                                     <constraint firstItem="epH-S9-psu" firstAttribute="centerX" secondItem="B5w-b8-KaW" secondAttribute="centerX" id="QJw-fl-vLB"/>
-                                    <constraint firstItem="E2o-zk-weh" firstAttribute="top" secondItem="B5w-b8-KaW" secondAttribute="top" constant="50" id="akT-Ow-0SH"/>
+                                    <constraint firstItem="HWR-5e-sLC" firstAttribute="top" secondItem="B5w-b8-KaW" secondAttribute="top" constant="10" id="gge-MP-GQD"/>
+                                    <constraint firstItem="HWR-5e-sLC" firstAttribute="centerX" secondItem="B5w-b8-KaW" secondAttribute="centerX" id="kYP-VO-Dey"/>
                                     <constraint firstItem="epH-S9-psu" firstAttribute="top" secondItem="E2o-zk-weh" secondAttribute="bottom" constant="20" id="sS6-oQ-gQP"/>
+                                    <constraint firstItem="ABg-dX-Czu" firstAttribute="top" secondItem="epH-S9-psu" secondAttribute="bottom" constant="16" id="uaS-O2-VkE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -70,14 +83,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AtlysLogo" width="244.33332824707031" height="84"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
