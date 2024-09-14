@@ -50,7 +50,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         visibleRect.size = collectionView.bounds.size
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
-        
         workWithSelectedCell(indexPath.row)
     }
     
