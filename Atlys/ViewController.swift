@@ -67,12 +67,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 class ZoomFlowLayout: UICollectionViewFlowLayout {
 
     let activeDistance: CGFloat = 130
-    let zoomFactor: CGFloat = 0.7
+    let zoomFactor: CGFloat = 0.5
 
     override init() {
         super.init()
         scrollDirection = .horizontal
-        minimumLineSpacing = 15
         let width = UIScreen.main.bounds.width * 0.4
         itemSize = CGSize(width: width, height: width)
     }
@@ -93,7 +92,6 @@ class ZoomFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return nil }
         let rectAttributes = super.layoutAttributesForElements(in: rect)!.map { $0.copy() as! UICollectionViewLayoutAttributes }
         let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.frame.size)
-        // Make the cells be zoomed when they reach the center of the screen
         for attributes in rectAttributes where attributes.frame.intersects(visibleRect) {
             let distance = visibleRect.midX - attributes.center.x
             let normalizedDistance = distance / activeDistance
@@ -109,7 +107,6 @@ class ZoomFlowLayout: UICollectionViewFlowLayout {
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = collectionView else { return .zero }
-        // Add some snapping behaviour so that the zoomed cell is always centered
         let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
         guard let rectAttributes = super.layoutAttributesForElements(in: targetRect) else { return .zero }
 
@@ -126,7 +123,6 @@ class ZoomFlowLayout: UICollectionViewFlowLayout {
     }
 
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        // Invalidate layout so that every cell get a chance to be zoomed when it reaches the center of the screen
         return true
     }
 
